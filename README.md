@@ -43,6 +43,13 @@ Little help
 <built-in function hex>
 >>> help(hex)
 
+hex(number, /)
+    Return the hexadecimal representation of an integer.
+    
+    >>> hex(12648430)
+    '0xc0ffee'
+(END)
+
 >>> hex(55555)
 '0xd903'
 
