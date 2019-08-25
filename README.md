@@ -151,6 +151,12 @@ title() method of builtins.str instance
 
 **virtualenv** is a tool to create isolated Python environments. virtualenv creates a folder which contains all the necessary executables to use the packages that a Python project would need.
 
+
+You can use Python3 built-in module for virtual enviromnets creation:
+```bash
+python3 -m venv <MYVENV>
+```
+Or use virtualenv, which works for both Python 2 and 3 versions.
 Let's install virtualenv. Use sudo for Linux and MacOS, or run Windows Power Shell as Administrator
 ```bash
 pip3 --version
