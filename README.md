@@ -269,3 +269,55 @@ http://localhost:8080/my_eval/4+5
 
 http://localhost:8080/my_eval
 ```
+
+Freeze modules versions
+```
+pip freeze
+bottle==0.12.17
+docopt==0.6.2
+jedi==0.15.1
+parso==0.5.1
+prompt-toolkit==2.0.9
+ptpython==2.0.4
+Pygments==2.4.2
+six==1.12.0
+wcwidth==0.1.7
+
+pip freeze > requirements.txt
+
+# Later you can do in other environments
+pip install -r requirements.txt
+```
+
+# Bonus:
+
+```python
+>>> import this
+The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!
+>>> 
+```
+
+
+TODO:
+Links, apps
+Solo learn, Codeacademy, etc.
