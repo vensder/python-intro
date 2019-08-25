@@ -297,7 +297,7 @@ pip install -r requirements.txt
 
 # Bonus:
 
-```python
+```
 >>> import this
 The Zen of Python, by Tim Peters
 
