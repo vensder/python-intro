@@ -21,7 +21,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 Hello Team H!
 ```
 
-Strings and numbers
+Strings
 ```python
 >>> s = 'python-intro'
 
@@ -76,7 +76,7 @@ class int(object)
 >>> int('D903', 16)
 55555
 ```
-
+More helps
 ```python
 # What can I upply for strings?
 >>> dir(str)
@@ -143,4 +143,129 @@ title() method of builtins.str instance
     cased characters have lower case.
 (END)
 
+```
+
+# Pip and Virtualenv
+
+**pip** is a tool for installing Python packages.
+
+**virtualenv** is a tool to create isolated Python environments. virtualenv creates a folder which contains all the necessary executables to use the packages that a Python project would need.
+
+Let's install virtualenv. Use sudo for Linux and MacOS, or run Windows Power Shell as Administrator
+```bash
+pip3 --version
+pip3 install virtualenv
+
+virtualenv --version
+
+virtualenv --help
+
+mkdir sandbox && cd sandbox
+virtualenv -p python3 env3
+source env3/bin/activate
+# or .\Scripts\activate for Windows
+
+➜  sandbox source env3/bin/activate
+(env3) ➜  sandbox 
+```
+
+Install ptpython using virtualenv
+```bash
+(env3) ➜  sandbox python --version
+Python 3.7.0
+(env3) ➜  sandbox pip --version
+pip 19.2.3 from /Users/vensder/sandbox/env3/lib/python3.7/site-packages/pip (python 3.7)
+(env3) ➜  sandbox pip install ptpython
+...
+(env3) ➜  sandbox ptpython
+
+>>> s = 'python-intro'
+
+>>> s.
+    capitalize        endswith          index             isidentifier      istitle           lstrip             
+    casefold          expandtabs        isalnum           islower           isupper           maketrans          
+    center            find              isalpha           isnumeric         join              partition         >
+    count             format            isdecimal         isprintable       ljust             replace            
+    encode            format_map        isdigit           isspace           lower             rfind              
+
+```
+
+
+Modules
+
+```python
+>>> import math
+
+>>> math.pi
+3.141592653589793
+
+>>> import os
+
+>>> os.cpu_count()
+4
+
+>>> 
+```
+
+## Simple Web Framework Bottle
+
+Bottle is a fast, simple and lightweight WSGI micro web-framework for Python.
+
+Run in virtual environment
+```bash
+pip install bottle
+Collecting bottle
+  Using cached https://files.pythonhosted.org/packages/69/d1/efdd0a5584169cdf791d726264089ce5d96846a8978c44ac6e13ae234327/bottle-0.12.17-py3-none-any.whl
+Installing collected packages: bottle
+Successfully installed bottle-0.12.17
+```
+
+```vim my_server.py # or any your's favorite editor```
+
+```python
+#!/usr/bin/env python3
+
+from bottle import route, run
+from bottle import template
+import os
+
+@route('/hello')
+def hello():
+    return "Hello World!"
+```
+
+```python
+@route('/hello/<name>')
+def greet(name='Stranger'):
+    return template('Hello {{name}}, how are you?', name=name)
+```
+
+Some crazy stuff. Never do it in production, only for tests.
+```python
+@route('/my_eval')
+@route('/my_eval/<my_string>')
+def my_eval(my_string='2+2'):
+    return my_string + '=' + str(eval(my_string))
+
+run(host='localhost', port=8080, debug=True)
+```
+
+```
+http://localhost:8080/my_eval/os.environ
+
+http://localhost:8080/my_eval/dir(os)
+
+http://localhost:8080/my_eval/os.cpu_count()
+
+http://localhost:8080/my_eval/55%0
+
+http://localhost:8080/my_eval/55%4
+
+http://localhost:8080/my_eval/%22adsfa%22*3
+
+http://localhost:8080/my_eval/3**3**3
+
+http://localhost:8080/my_eval/4+5
+
+http://localhost:8080/my_eval
 ```
