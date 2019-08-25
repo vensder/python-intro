@@ -2,14 +2,16 @@
 
 Just a simple Python intro for beginners
 
+Check the python3 version
 ```bash
 python3 --version
 ```
 
-## REPL handy tools
+## REPL handy tools (python built-in functions)
 
 REPL - A read–eval–print loop, also termed an interactive toplevel or language shell.
 
+Run Python REPL
 ```bash
 python3
 Python 3.7.0 (v3.7.0:1bf9cc5093, Jun 26 2018, 23:26:24) 
@@ -19,7 +21,8 @@ Type "help", "copyright", "credits" or "license" for more information.
 Hello Team H!
 ```
 
-```bash
+Strings and numbers
+```python
 >>> s = 'python-intro'
 
 >>> s.capitalize()
@@ -34,3 +37,19 @@ Hello Team H!
 >>> s.replace('-', ' ').title()
 'Python Intro'
 ```
+
+```python
+>>> hex
+<built-in function hex>
+>>> help(hex)
+
+>>> hex(55555)
+'0xd903'
+
+>>> hex(55555).upper()
+'0XD903'
+
+>>> hex(55555).upper()[2:]
+'D903'
+```
+
