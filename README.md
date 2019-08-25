@@ -59,6 +59,18 @@ hex(number, /)
 >>> hex(55555).upper()[2:]
 'D903'
 
+>>> help(int)
+
+Help on class int in module builtins:
+
+class int(object)
+ |  int([x]) -> integer
+ |  int(x, base=10) -> integer
+ |  
+ |  Convert a number or string to an integer, or return 0 if no arguments
+ |  are given.
+...
+
 >>> int('0XD903', 16)
 55555
 >>> int('D903', 16)
